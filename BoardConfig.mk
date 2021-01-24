@@ -62,7 +62,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
 TARGET_KERNEL_CONFIG := defconfig
 TARGET_KERNEL_SOURCE := kernel/nokia/Dynamo
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
 
 
 # Partitions
