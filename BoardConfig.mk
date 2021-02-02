@@ -55,7 +55,7 @@ BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 TARGET_KERNEL_ARCH := arm
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
-TARGET_KERNEL_CONFIG := msm8909_defconfig
+TARGET_KERNEL_CONFIG := Dynamo_defconfig
 TARGET_KERNEL_SOURCE := kernel/nokia/Dynamo
 
 # Audio
