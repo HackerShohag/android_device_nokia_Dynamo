@@ -3,13 +3,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-$(call inherit-product-if-exists, vendor/nokia/Dynamo/Dynamo-vendor.mk)
+$(call inherit-product-if-exists, vendor/nokia/dynamo/dynamo-vendor.mk)
 
-DEVICE_PACKAGE_OVERLAYS += device/nokia/Dynamo/overlay
+DEVICE_PACKAGE_OVERLAYS += device/nokia/dynamo/overlay
 
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/nokia/Dynamo/kernel
+	LOCAL_KERNEL := device/nokia/dynamo/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -182,8 +182,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := lineage_Dynamo
-PRODUCT_MODEL := Shohag
+PRODUCT_NAME := lineage_dynamo
+PRODUCT_MODEL := dynamo
 
 # Inherit vendor
-$(call inherit-product, vendor/nokia/Dynamo/Dynamo-vendor.mk)
+$(call inherit-product, vendor/nokia/dynamo/dynamo-vendor.mk)
