@@ -14,22 +14,18 @@
 # limitations under the License.
 #
 
-CONFIG_IKCONFIG := y
-CONFIG_IKCONFIG_PROC := y
 TARGET_OTA_ASSERT_DEVICE := Dynamo,dynamo
 
-PLATFORM_PATH := device/nokia/Dynamo
-
-DEVICE_PATH := device/nokia/Dynamo
+PLATFORM_PATH := device/nokia/dynamo
 
 BOARD_VENDOR := nokia
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := Dynamo
+TARGET_BOOTLOADER_BOARD_NAME := MSM8909
 TARGET_NO_BOOTLOADER := true
 
 # Platform
-TARGET_BOARD_PLATFORM := Dynamo
+TARGET_BOARD_PLATFORM := msm8909
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno304
 
 # Architecture
@@ -51,12 +47,11 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
 TARGET_KERNEL_APPEND_DTB := true
-BOARD_KERNEL_IMAGE_NAME := zImage-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
-TARGET_KERNEL_CONFIG := Dynamo_defconfig
-TARGET_KERNEL_SOURCE := kernel/nokia/Dynamo
+TARGET_KERNEL_HEADER_ARCH := arm
+TARGET_KERNEL_CONFIG := dynamo_defconfig
+TARGET_KERNEL_SOURCE := kernel/nokia/dynamo
 
 # Audio
 AUDIO_FEATURE_ENABLED_ACDB_LICENSE := true
@@ -212,4 +207,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 
 # inherit from the proprietary version
--include vendor/nokia/Dynamo/BoardConfigVendor.mk
+-include vendor/nokia/dynamo/BoardConfigVendor.mk
+
+#CONFIG_IKCONFIG := y
+#CONFIG_IKCONFIG_PROC := y
+#BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+#KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
